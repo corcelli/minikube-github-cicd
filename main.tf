@@ -45,11 +45,6 @@ resource "aws_eip_association" "MINIKUBE" {
   allocation_id = aws_eip.MINIKUBE.id
 }
 
-
-data "template_file" "user_data" {
-  template = "${file("script.sh")}"
-}
-
 resource "aws_security_group" "MINIKUBE" {
   name = var.A_project_name
   description = var.A_project_name

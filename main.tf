@@ -241,27 +241,3 @@ output "public_ip_EC2" {
   description = "The public IP EC2 server"
 }
 
-output "public_RDS_endpoint" {
-  value       = aws_db_instance.MINIKUBE.endpoint
-  description = "RDS endpoint Access"
-}
-
-output "public_RDS_Nome_Banco_Dados" {
-  value       = aws_db_instance.MINIKUBE.name
-  description = "Nome do banco de dados:"
-}
-#output "public_DNS_LB" {
-#  value       = aws_lb.MINIKUBE.dns_name
-#  description = "The public LB DNS"
-#}
-
-output "project_DNS" {
-  value       = "https://${var.B_project_DNS}"
-  description = "DNS de acesso final"
-}
-
-output "Portainer" {
-  value       = "https://${var.B_project_DNS}:9000"
-  description = "DNS de acesso final"
-}
-

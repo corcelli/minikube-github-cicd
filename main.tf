@@ -118,14 +118,14 @@ resource "aws_security_group" "MINIKUBE" {
 
 #####DNS Route53 ####
 
-resource "aws_route53_record" "MINIKUBE" {
+/* resource "aws_route53_record" "MINIKUBE" {
   zone_id = "Z02536331TX68R0C60A2M"
   name    = var.B_project_DNS
   type    = "CNAME"
   ttl     = "300"
   #records = [aws_eip.lb.public_ip]
   records = [aws_lb.MINIKUBE.dns_name]
-}
+} */
 
 
   /* resource "aws_db_instance" "MINIKUBE" {
@@ -151,7 +151,7 @@ resource "aws_route53_record" "MINIKUBE" {
 
 
 #####LoadBalacing + SSL Certified ####
-resource "aws_lb" "MINIKUBE" {
+/* resource "aws_lb" "MINIKUBE" {
   name            = var.A_project_name
   internal           = false
   load_balancer_type = "application"
@@ -227,7 +227,7 @@ resource "aws_lb_target_group_attachment" "MINIKUBE" {
   target_group_arn = aws_lb_target_group.MINIKUBE.arn
   target_id        = aws_instance.MINIKUBE.id
   port             = 3334
-}
+} */
 
 
 #resource "aws_vpc" "MINIKUBE" {
